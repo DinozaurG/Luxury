@@ -25,6 +25,8 @@
 
         <activity android:name=".activities.RoomTypeActivity" />
 
+        <activity android:name=".activities.ProductDescriprionActivity"/>
+
         <activity android:name=".Catalog" />
 
         <activity android:name=".MainActivity" />

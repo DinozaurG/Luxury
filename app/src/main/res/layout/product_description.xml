@@ -33,7 +33,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/description"
+        android:text="Описание"
         android:textStyle="italic"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +91,6 @@
         android:layout_marginBottom="20dp"
         android:layout_toStartOf="@+id/addButton"
         android:background="@color/colorButton"
-        android:text="0"
         android:textSize="30sp"
         android:gravity="center"
         android:textColor="@color/colorWhite" />
@@ -109,7 +108,7 @@
         android:layout_marginEnd="16dp"
         android:textColor="@color/colorWhite"
         android:background="@color/colorButton"
-        android:text="@string/product"
+        android:text="Продукт"
         android:textSize="30sp"
 
         />
