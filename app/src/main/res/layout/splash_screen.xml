@@ -6,16 +6,22 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgSplashScreen">
+    android:background="@color/colorWhite"
+    style="@style/AppTheme.NoActionBar">
 
-    <ImageView
-        android:id="@+id/Logo"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/View"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:textStyle="italic|bold"
+        android:text="@string/bo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars"
-        />
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorButton"
+        tools:ignore="MissingConstraints"
+        android:gravity="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

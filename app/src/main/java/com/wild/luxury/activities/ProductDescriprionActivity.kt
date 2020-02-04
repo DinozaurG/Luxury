@@ -1,5 +1,6 @@
 package com.wild.luxury.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +30,11 @@ class ProductDescriprionActivity : AppCompatActivity() {
                 numBuy--
                 numProduct.text = numBuy.toString()
             }
+        }
+
+        buyProduct.setOnClickListener {
+            val intent = Intent(this, MainRoomActivity::class.java)
+            startActivity(intent)
         }
 
     }

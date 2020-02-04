@@ -50,9 +50,9 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
         android:layout_toStartOf="@+id/removeButton"
-        android:background="@color/colorButton"
+        style="@style/ButtonStyle"
         android:text="@string/buy"
-        android:textColor="@color/colorWhite" />
+        />
 
     <ImageButton
         android:id="@+id/addButton"
