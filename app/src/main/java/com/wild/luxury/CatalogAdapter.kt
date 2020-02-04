@@ -20,7 +20,8 @@ class CatalogAdapter(val items: ArrayList<String>): RecyclerView.Adapter<Catalog
 
     }
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        /*val img: TextView = itemView.findViewById(R.id.imageOfTovar)
+        /*val buyButton: Button = itemView.findViewById(R.id.buyButton)
+        val img: ImageView = itemView.findViewById(R.id.imageOfTovar)
         val price: TextView = itemView.findViewById(R.id.priceOfTovar)
         val desc: TextView = itemView.findViewById(R.id.describeOfTovar)*/
         val nme: TextView = itemView.findViewById(R.id.nameOfTovar)
