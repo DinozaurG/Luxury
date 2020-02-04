@@ -19,7 +19,7 @@ class ProductDescriprion : AppCompatActivity() {
 
         var numProduct : TextView = findViewById(R.id.textNum)
 
-        numProduct.text =getText(R.string.productNumBuy)
+
 
         addButton.setOnClickListener {
         }

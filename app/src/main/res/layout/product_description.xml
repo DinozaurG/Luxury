@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,7 +33,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Description"
+        android:text="@string/description"
         android:textStyle="italic"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
         android:layout_marginBottom="20dp"
         android:layout_toStartOf="@+id/removeButton"
         android:background="@color/colorButton"
-        android:text="@string/Buy"
+        android:text="@string/buy"
         android:textColor="@color/colorWhite" />
 
     <ImageButton
@@ -82,17 +82,6 @@
          />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textDescription"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="30dp"
-        android:text="@string/Num"
-        android:textColor="@color/colorButton" />
-
-    <TextView
         android:id="@+id/textNum"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -102,7 +91,7 @@
         android:layout_marginBottom="20dp"
         android:layout_toStartOf="@+id/addButton"
         android:background="@color/colorButton"
-        android:text="@string/productNumBuy"
+        android:text="0"
         android:textSize="30sp"
         android:gravity="center"
         android:textColor="@color/colorWhite" />
@@ -120,7 +109,7 @@
         android:layout_marginEnd="16dp"
         android:textColor="@color/colorWhite"
         android:background="@color/colorButton"
-        android:text="@string/Product"
+        android:text="@string/product"
         android:textSize="30sp"
 
         />
