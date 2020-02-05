@@ -4,6 +4,6 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@mipmap/loogo"/>
+            android:src="@drawable/loogo"/>
     </item>
 </layer-list>
