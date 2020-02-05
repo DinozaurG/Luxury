@@ -1,7 +1,8 @@
-package com.wild.luxury
+package com.wild.luxury.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.wild.luxury.R
 
 class MainActivity : AppCompatActivity() {
 

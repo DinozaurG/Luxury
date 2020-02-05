@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Luxury</string>
+    <string name="buy">Купить</string>
     <string name="modest_room">Modest room</string>
     <string name="moderate_room">Moderate room</string>
     <string name="luxury_room">Luxury room</string>
     <string name="choose">Choose</string>
+    <string name="bo">BO!</string>
 </resources>
