@@ -8,7 +8,7 @@ import com.wild.luxury.Product
 import com.wild.luxury.R
 import kotlinx.android.synthetic.main.activity_main_room_item.view.*
 
-class RoomAdapter: RecyclerView.Adapter<RoomViewHolder>() {
+class RoomAdapter(): RecyclerView.Adapter<RoomViewHolder>() {
 
     var list : List<Product> = emptyList()
     set (value) {
@@ -16,18 +16,21 @@ class RoomAdapter: RecyclerView.Adapter<RoomViewHolder>() {
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoomViewHolder =
-        RoomViewHolder(LayoutInflater
-            .from(parent.context)
-            .inflate(R.layout.activity_main_room_item, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoomViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.activity_main_room_item, parent, false)
+        return RoomViewHolder(view)
+    }
 
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: RoomViewHolder, position: Int) =
-        holder.bind(list[position].name)
+        holder.bind(list[position])
 }
-class RoomViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-    fun bind(name: String) {
-        itemView.item_name.text = name
+class RoomViewHolder(
+    itemView: View
+): RecyclerView.ViewHolder(itemView) {
+    fun bind(product: Product) {
+        itemView.item_name.text = product.name
     }
 }

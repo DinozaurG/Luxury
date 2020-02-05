@@ -3,6 +3,8 @@ package com.wild.luxury.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
+import android.os.PersistableBundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main_room.*
 class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     private val presenter = MainRoomPresenter()
+    private var roomType: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,18 +26,19 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
         presenter.bindView(this)
 
-        supportActionBar?.title = "${intent.getStringExtra("roomType")} room"
+        val product = intent.getSerializableExtra("product") as Product
 
         val adapter = RoomAdapter()
-       /* adapter.list = listOf(
-            Product("Table", 100),
-            Product("Table", 200),
-            Product("Table", 100),
-            Product("Table", 100),
-            Product("Table", 100),
-            Product("Table", 100),
-            Product("Table", 100)
-        )*/
+        adapter.list = listOf(
+            product,
+            Product("Table", 100, 1, "sd"),
+            Product("Table", 200, 2, "sd"),
+            Product("Table", 100, 1, "sd"),
+            Product("Table", 100, 2, "sd"),
+            Product("Table", 100, 1, "sd"),
+            Product("Table", 100, 3, "sd"),
+            Product("Table", 100, 1, "sd")
+        )
         room_recycler.adapter = adapter
         room_recycler.layoutManager = LinearLayoutManager(this)
 
@@ -45,7 +49,7 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     override fun changeActivity() {
         val intent = Intent(this, Catalog::class.java)
-//            .apply { putExtra("roomType", "Modest") }
+            .apply { roomType?.let { putExtra("roomType", roomType) } }
         startActivity(intent)
     }
 }
