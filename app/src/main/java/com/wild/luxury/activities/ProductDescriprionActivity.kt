@@ -22,7 +22,7 @@ class ProductDescriprionActivity : AppCompatActivity() {
         val product = intent.getSerializableExtra("product") as Product
 
         productName.text = product.name
-        textDescription.text = product.descriptor
+        textDescription.text = product.description
 
 
         var numBuy = 0
@@ -45,7 +45,7 @@ class ProductDescriprionActivity : AppCompatActivity() {
 
                 val intent = Intent(this, MainRoomActivity::class.java)
                 product.count += numBuy
-               // intent.putExtra("product",product)
+                intent.putExtra("product",product)
                 startActivity(intent)
             }
         }
