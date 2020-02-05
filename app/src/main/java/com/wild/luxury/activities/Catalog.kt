@@ -20,7 +20,7 @@ class Catalog : AppCompatActivity(),
         setContentView(R.layout.activity_catalog)
 
         for (i in 1..10) {
-
+            items.add(Product("Table $i", 500 * i,3,"ASD"))
         }
         val itemsList = findViewById<RecyclerView>(R.id.catalogRecView)
         itemsList.layoutManager = LinearLayoutManager(this)
