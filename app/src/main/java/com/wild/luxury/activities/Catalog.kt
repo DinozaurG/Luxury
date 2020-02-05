@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.wild.luxury.Product
 import com.wild.luxury.adapters.CatalogAdapter
 import com.wild.luxury.adapters.OnItemClickListener
 import com.wild.luxury.R
@@ -12,24 +13,24 @@ import com.wild.luxury.R
 class Catalog : AppCompatActivity(),
     OnItemClickListener {
 
+    val items: ArrayList<Product> = ArrayList()
     private lateinit var adapter: CatalogAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalog)
 
-        val items: ArrayList<String> = ArrayList()
-
         for (i in 1..10) {
-            items.add("Name $i")
+
         }
-        val usersList = findViewById<RecyclerView>(R.id.catalogRecView)
-        usersList.layoutManager = LinearLayoutManager(this)
+        val itemsList = findViewById<RecyclerView>(R.id.catalogRecView)
+        itemsList.layoutManager = LinearLayoutManager(this)
         adapter = CatalogAdapter(items, this)
-        usersList.adapter = adapter
+        itemsList.adapter = adapter
     }
 
-    override fun onItemClicked() {
+    override fun onItemClicked(item: Product) {
         val intent = Intent(this, ProductDescriprionActivity::class.java)
+        intent.putExtra("product", item)
         startActivity(intent)
     }
 }

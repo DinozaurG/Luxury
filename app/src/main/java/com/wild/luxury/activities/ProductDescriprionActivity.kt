@@ -14,8 +14,8 @@ class ProductDescriprionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_description)
 
-
-
+        val productName : TextView = findViewById(R.id.textView4)
+        //productName.setText()
 
         val numProduct : TextView = findViewById(R.id.textNum)
 
