@@ -1,4 +1,4 @@
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -16,11 +16,17 @@
     <style name="ButtonStyle">
         <item name="android:backgroundTint">@color/colorButton</item>
         <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:buttonCornerRadius">10dp</item>
+        <item name="android:buttonCornerRadius" tools:targetApi="p">10dp</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:windowBackground">@drawable/logo</item>
+
+    </style>
 
 </resources>

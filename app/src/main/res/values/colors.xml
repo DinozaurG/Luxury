@@ -5,5 +5,5 @@
     <color name="colorAccent">#D81B60</color>
     <color name="bgSplashScreen">#00bfff</color>
     <color name="colorButton">#FF4E33</color>
-    <color  name="colorWhite">#ffffff</color>
+    <color name="colorWhite">#ffffff</color>
 </resources>
