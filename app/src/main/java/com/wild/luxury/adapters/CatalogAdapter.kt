@@ -21,7 +21,7 @@ class CatalogAdapter(val items: ArrayList<Product>, val itemClickListener: OnIte
         val item : Product = items[position]
         holder.nme.text = items[position].name
         holder.price.text = items[position].price.toString()
-        holder.desc.text = items[position].description
+        holder.desc.text = items[position].descriptor
         holder.bind(item, itemClickListener)
 
     }

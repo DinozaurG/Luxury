@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="353dp"
         android:layout_above="@+id/buyProduct"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/productName"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="16dp"
@@ -51,7 +51,7 @@
         android:layout_marginBottom="20dp"
         android:layout_toStartOf="@+id/removeButton"
         style="@style/ButtonStyle"
-        android:text="@string/buy"
+        android:text="Купить"
         />
 
     <ImageButton
@@ -96,7 +96,7 @@
         android:textColor="@color/colorWhite" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/productName"
         android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

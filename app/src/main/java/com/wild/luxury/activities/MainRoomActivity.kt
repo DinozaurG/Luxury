@@ -26,7 +26,7 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
         supportActionBar?.title = "${intent.getStringExtra("roomType")} room"
 
         val adapter = RoomAdapter()
-        adapter.list = listOf(
+       /* adapter.list = listOf(
             Product("Table", 100),
             Product("Table", 200),
             Product("Table", 100),
@@ -34,7 +34,7 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
             Product("Table", 100),
             Product("Table", 100),
             Product("Table", 100)
-        )
+        )*/
         room_recycler.adapter = adapter
         room_recycler.layoutManager = LinearLayoutManager(this)
 
