@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="name"
+        android:text="Name"
         android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="sans"
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginTop="40dp"
-        android:text="blablabla"
+        android:text="Describe"
         app:layout_constraintStart_toEndOf="@+id/imageOfTovar"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,20 +46,12 @@
         android:id="@+id/priceOfTovar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="10dp"
         android:text="100$"
+        android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buyButton" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <ImageButton
-        android:id="@+id/buyButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_add_red_24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
