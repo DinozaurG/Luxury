@@ -17,9 +17,12 @@ class RoomTypeActivity : AppCompatActivity() {
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
         viewPager.adapter = viewPagerAdapter
 
-        tab_layout.setupWithViewPager(viewPager)
+        viewPager.currentItem = 1
+        viewPager.setPadding(64, 0, 64, 0)
+        viewPager.clipToPadding = false
+        viewPager.pageMargin = 8
 
-        supportActionBar?.title = "Choose type of room"
+        tab_layout.setupWithViewPager(viewPager)
 
     }
 

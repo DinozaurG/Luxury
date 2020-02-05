@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#f02043</color>
-    <color name="colorPrimaryDark">#b5001c</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimaryDark">#99122A</color>
+    <color name="colorPrimaryLight">#ff626e</color>
+    <color name="colorAccent">#F7FBFF</color>
     <color name="bgSplashScreen">#00bfff</color>
     <color name="colorButton">#FF4E33</color>
-    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorSecondary">#17375e</color>
+    <color name="colorSecondaryLight">#47618b</color>
+    <color name="colorSecondaryDark">#001134</color>
 </resources>

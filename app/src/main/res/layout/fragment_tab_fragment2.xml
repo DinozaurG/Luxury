@@ -9,37 +9,53 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"
-        android:background="@color/colorPrimaryDark">
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorWhite"
+        android:elevation="8dp">
 
         <TextView
             android:id="@+id/textViewTittle2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/moderate_room"
+            android:background="@color/colorSecondary"
+            android:fontFamily="@font/roboto"
+            android:padding="2dp"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
             android:textStyle="bold"
+            android:text="@string/moderate_room"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorPrimary"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/buttonChooseRoomType2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/choose"
+            android:background="@drawable/bordered_button"
+            android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorPrimary"/>
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp" />
+
+        <ImageView
+            android:id="@+id/image2"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/standart_hotel_room"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTittle2"
+            tools:src="@tools:sample/backgrounds/scenic"/>
 
         <TextView
             android:id="@+id/textViewDescription1"
@@ -51,12 +67,11 @@
             app:layout_constraintBottom_toTopOf="@+id/buttonChooseRoomType2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTittle2"
+            app:layout_constraintTop_toBottomOf="@+id/image2"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/colorPrimary"/>
+            android:layout_marginBottom="8dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,10 +1,11 @@
 <resources>
-    <string name="app_name">Luxury</string>
-    <string name="modest_room">Modest room</string>
-    <string name="moderate_room">Moderate room</string>
-    <string name="luxury_room">Luxury room</string>
+    <string name="app_name">BO!</string>
+    <string name="modest_room">Econom</string>
+    <string name="moderate_room">Standart</string>
+    <string name="luxury_room">Luxury</string>
     <string name="choose">Choose</string>
     <string name="buy">buy</string>
     <string name="product">product</string>
     <string name="bo">bo</string>
+    <string name="any_information">Any information</string>
 </resources>

@@ -26,8 +26,8 @@ class ViewPagerAdapter(fm: FragmentManager): FragmentPagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            0 -> "Modest"
-            1 -> "Moderate"
+            0 -> "Econom"
+            1 -> "Standart"
             else -> {
                 return "Luxury"
             }

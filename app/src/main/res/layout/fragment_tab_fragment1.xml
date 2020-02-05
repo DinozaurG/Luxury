@@ -9,24 +9,28 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"
-        android:background="@color/colorPrimaryDark">
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorWhite"
+        android:elevation="8dp">
 
         <TextView
             android:id="@+id/textViewTittle1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"
+            android:fontFamily="@font/roboto"
+            android:padding="2dp"
             android:text="@string/modest_room"
             android:textAlignment="center"
-            android:textSize="36sp"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorPrimary"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/buttonChooseRoomType1"
@@ -38,8 +42,18 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/colorPrimary" />
+            android:layout_marginEnd="8dp"/>
+
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/econom_hotel_room"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTittle1"
+            tools:src="@tools:sample/backgrounds/scenic"/>
 
         <TextView
             android:id="@+id/textViewDescription1"
@@ -51,12 +65,11 @@
             app:layout_constraintBottom_toTopOf="@+id/buttonChooseRoomType1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTittle1"
+            app:layout_constraintTop_toBottomOf="@+id/image1"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@color/colorPrimary"/>
+            android:layout_marginBottom="8dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

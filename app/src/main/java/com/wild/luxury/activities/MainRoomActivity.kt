@@ -28,10 +28,15 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
         val product = intent.getSerializableExtra("product") as Product?
 
+        val testList = mutableListOf(
+            Product("Table", 150, 2, "Something"),
+            Product("Table", 150, 2, "Something")
+        )
         val adapter = RoomAdapter()
         product?.let {
-            adapter.list = listOf(product)
+            testList.add(product)
         }
+        adapter.list = testList
         room_recycler.adapter = adapter
         room_recycler.layoutManager = LinearLayoutManager(this)
 
