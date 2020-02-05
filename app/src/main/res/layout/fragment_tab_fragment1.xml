@@ -53,23 +53,90 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewTittle1"
-            tools:src="@tools:sample/backgrounds/scenic"/>
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <ImageView
+            android:id="@+id/image_OK1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="8dp"
+            app:layout_constraintEnd_toStartOf="@id/text_area1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_area1"
+            app:layout_constraintBottom_toBottomOf="@id/text_area1"
+            app:srcCompat="@android:drawable/checkbox_on_background"
+            tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
-            android:id="@+id/textViewDescription1"
+            android:id="@+id/text_area1"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:hint="Any information"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonChooseRoomType1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image1"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginEnd="8dp"
+            android:text="@string/econom_area"
+            android:gravity="center|start"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textColor="@color/colorSecondary"
+            app:layout_constraintBottom_toTopOf="@id/text_area2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_OK1"
+            app:layout_constraintTop_toBottomOf="@+id/image1" />
+
+        <ImageView
+            android:id="@+id/image_OK2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="8dp"
+            app:layout_constraintEnd_toStartOf="@id/text_area2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/text_area2"
+            app:layout_constraintBottom_toBottomOf="@id/text_area2"
+            app:srcCompat="@android:drawable/checkbox_on_background"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/text_area2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/econom_furniture"
+            android:gravity="center|start"
+            android:textSize="20sp"
+            android:textColor="@color/colorSecondary"
+            app:layout_constraintBottom_toTopOf="@id/text_area3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_OK2"
+            app:layout_constraintTop_toBottomOf="@id/text_area1" />
+
+        <ImageView
+            android:id="@+id/image_OK3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonChooseRoomType1"
+            app:layout_constraintEnd_toStartOf="@id/text_area3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_area3"
+            app:srcCompat="@android:drawable/checkbox_on_background"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/text_area3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/econom_coin"
+            android:gravity="center|start"
+            android:textSize="20sp"
+            android:textColor="@color/colorSecondary"
+            app:layout_constraintBottom_toTopOf="@id/buttonChooseRoomType1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/image_OK3"
+            app:layout_constraintTop_toBottomOf="@id/text_area2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
