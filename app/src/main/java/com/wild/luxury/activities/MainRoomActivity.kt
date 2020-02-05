@@ -26,19 +26,12 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
         presenter.bindView(this)
 
-        val product = intent.getSerializableExtra("product") as Product
+        val product = intent.getSerializableExtra("product") as Product?
 
         val adapter = RoomAdapter()
-        adapter.list = listOf(
-            product,
-            Product("Table", 100, 1, "sd"),
-            Product("Table", 200, 2, "sd"),
-            Product("Table", 100, 1, "sd"),
-            Product("Table", 100, 2, "sd"),
-            Product("Table", 100, 1, "sd"),
-            Product("Table", 100, 3, "sd"),
-            Product("Table", 100, 1, "sd")
-        )
+        product?.let {
+            adapter.list = listOf(product)
+        }
         room_recycler.adapter = adapter
         room_recycler.layoutManager = LinearLayoutManager(this)
 

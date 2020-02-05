@@ -19,7 +19,7 @@ class ProductDescriprionActivity : AppCompatActivity() {
 
         val numProduct : TextView = findViewById(R.id.textNum)
 
-        val product = intent.getSerializableExtra("product") as Product
+        var product = intent.getSerializableExtra("product") as Product
 
         productName.text = product.name
         textDescription.text = product.description
@@ -42,9 +42,8 @@ class ProductDescriprionActivity : AppCompatActivity() {
 
         buyProduct.setOnClickListener {
             if(numBuy!=0){
-
                 val intent = Intent(this, MainRoomActivity::class.java)
-                product.count += numBuy
+                product.count = numBuy
                 intent.putExtra("product",product)
                 startActivity(intent)
             }

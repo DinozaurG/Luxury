@@ -9,6 +9,6 @@ data class Room(
 data class Product (
     val name: String,
     val price: Int,
-    val count: Int,
+    var count: Int,
     val description: String
 ) : Serializable
