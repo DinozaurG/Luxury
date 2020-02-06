@@ -26,7 +26,7 @@ import retrofit2.Response
 class Catalog : AppCompatActivity(),
     OnItemClickListener {
 
-    //val items: ArrayList<Product> = ArrayList()
+    val items: ArrayList<Product> = ArrayList()
     private lateinit var toolbar : Toolbar
     private lateinit var adapter: CatalogAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +35,11 @@ class Catalog : AppCompatActivity(),
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-            /*for (i in 1..10) {
-            items?.add(Product("Table $i", 500 * i,3,"ASD"))
-        }*/
+            for (i in 1..10) {
+            items.add(Product("Table $i", 500 * i,3,"ASD", "h"))
+        }
 
-        val items = getProducts()
+        //val items = getProducts()
 
         val itemsList = findViewById<RecyclerView>(R.id.catalogRecView)
         itemsList.layoutManager = LinearLayoutManager(this)
@@ -55,6 +55,18 @@ class Catalog : AppCompatActivity(),
         val searchView: SearchView? = searchItem?.actionView as SearchView
 
         searchView?.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        searchView?.setOnQueryTextListener(object :
+            SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                Toast.makeText(this@Catalog,"Submitted",Toast.LENGTH_LONG).show()
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                Toast.makeText(this@Catalog,"Changed",Toast.LENGTH_LONG).show()
+                return false
+            }
+        })
         return super.onCreateOptionsMenu(menu)
     }
 

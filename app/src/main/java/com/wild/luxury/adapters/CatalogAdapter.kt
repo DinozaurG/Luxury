@@ -3,12 +3,12 @@ package com.wild.luxury.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.Product
 import com.wild.luxury.R
+import com.wild.luxury.ViewHolder
 
-class CatalogAdapter(val items: List<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
+class CatalogAdapter(val items: List<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.catalog_row, parent, false)
@@ -24,18 +24,6 @@ class CatalogAdapter(val items: List<Product>, val itemClickListener: OnItemClic
         holder.desc.text = items[position].description
         holder.bind(item, itemClickListener)
 
-    }
-    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        //val img: ImageView = itemView.findViewById(R.id.imageOfTovar)
-        val price: TextView = itemView.findViewById(R.id.priceOfTovar)
-        val desc: TextView = itemView.findViewById(R.id.describeOfTovar)
-        val nme: TextView = itemView.findViewById(R.id.nameOfTovar)
-        fun bind(item : Product, clickListener: OnItemClickListener)
-        {
-            itemView.setOnClickListener {
-                clickListener.onItemClicked(item)
-            }
-        }
     }
 }
 
