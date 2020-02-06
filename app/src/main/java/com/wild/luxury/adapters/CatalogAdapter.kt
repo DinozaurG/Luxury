@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.Product
 import com.wild.luxury.R
 
-class CatalogAdapter(val items: ArrayList<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
+class CatalogAdapter(val items: List<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.catalog_row, parent, false)
