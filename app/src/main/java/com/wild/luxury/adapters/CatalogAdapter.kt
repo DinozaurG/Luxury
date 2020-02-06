@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.Product
 import com.wild.luxury.R
 
-class CatalogAdapter(val items: List<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
+class CatalogAdapter(val items: List<Product>): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.catalog_row, parent, false)
@@ -22,7 +22,7 @@ class CatalogAdapter(val items: List<Product>, val itemClickListener: OnItemClic
         holder.nme.text = items[position].name
         holder.price.text = items[position].price.toString()
         holder.desc.text = items[position].description
-        holder.bind(item, itemClickListener)
+       // holder.bind(item, itemClickListener)
 
     }
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {

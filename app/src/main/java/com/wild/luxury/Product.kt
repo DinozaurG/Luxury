@@ -14,3 +14,7 @@ data class Product (
     val description: String,
     @SerializedName("photo_url") val photoUrl:String
 ) : Serializable
+
+data class CatalogList (
+    val products: List<Product>
+)

@@ -29,8 +29,8 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
         val product = intent.getSerializableExtra("product") as Product?
 
         val testList = mutableListOf(
-            Product("Table", 150, 2, "Something"),
-            Product("Table", 150, 2, "Something")
+            Product("Table", 150, 2, "Something", ""),
+            Product("Table", 150, 2, "Something", "")
         )
         val adapter = RoomAdapter()
         product?.let {
