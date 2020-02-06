@@ -37,6 +37,7 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
             testList.add(product)
         }
         adapter.list = testList
+
         room_recycler.adapter = adapter
         room_recycler.layoutManager = LinearLayoutManager(this)
 

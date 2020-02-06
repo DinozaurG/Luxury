@@ -59,13 +59,18 @@
 
         <ImageView
             android:id="@+id/image2_OK1"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="8dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+
+            app:layout_constraintBottom_toBottomOf="@id/text2_area1"
             app:layout_constraintEnd_toStartOf="@id/text2_area1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text2_area1"
-            app:layout_constraintBottom_toBottomOf="@id/text2_area1"
             app:srcCompat="@android:drawable/checkbox_on_background"
             tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -87,13 +92,18 @@
 
         <ImageView
             android:id="@+id/image2_OK2"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="8dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+
+            app:layout_constraintBottom_toBottomOf="@id/text2_area2"
             app:layout_constraintEnd_toStartOf="@id/text2_area2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text2_area2"
-            app:layout_constraintBottom_toBottomOf="@id/text2_area2"
             app:srcCompat="@android:drawable/checkbox_on_background"
             tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -114,10 +124,15 @@
 
         <ImageView
             android:id="@+id/image2_OK3"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonChooseRoomType2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+
+            app:layout_constraintBottom_toBottomOf="@+id/text2_area3"
             app:layout_constraintEnd_toStartOf="@id/text2_area3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/text2_area3"

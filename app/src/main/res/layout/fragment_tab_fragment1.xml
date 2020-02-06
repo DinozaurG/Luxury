@@ -37,12 +37,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/choose"
+            android:background="@drawable/bordered_button"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"/>
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/image1"
@@ -57,9 +59,14 @@
 
         <ImageView
             android:id="@+id/image_OK1"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="8dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+
             app:layout_constraintEnd_toStartOf="@id/text_area1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text_area1"
@@ -83,11 +90,17 @@
             app:layout_constraintStart_toEndOf="@id/image_OK1"
             app:layout_constraintTop_toBottomOf="@+id/image1" />
 
+
         <ImageView
             android:id="@+id/image_OK2"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="8dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+
             app:layout_constraintEnd_toStartOf="@id/text_area2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text_area2"
@@ -112,10 +125,15 @@
 
         <ImageView
             android:id="@+id/image_OK3"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonChooseRoomType1"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+
+            app:layout_constraintBottom_toBottomOf="@id/text_area3"
             app:layout_constraintEnd_toStartOf="@id/text_area3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/text_area3"
