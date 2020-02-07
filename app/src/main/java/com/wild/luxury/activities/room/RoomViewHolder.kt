@@ -12,7 +12,7 @@ class RoomViewHolder(itemView: View, private val clickListener: (Product) -> Uni
         itemView.item_name.text = product.name
         itemView.item_text_category.text = product.category
         itemView.item_text_count.text = "${product.count} шт."
-        itemView.delButton.setOnClickListener {
+        itemView.setOnClickListener {
             clickListener(product)
         }
     }

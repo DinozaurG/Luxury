@@ -54,19 +54,11 @@
             android:textSize="16sp"
             android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/delButton"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/item_name"
             app:layout_constraintTop_toBottomOf="@id/item_text_category"
             tools:text="5 штук" />
 
-        <Button
-            android:id="@+id/delButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="D"
-            app:layout_constraintStart_toEndOf="@id/item_text_count"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
             android:id="@+id/item_image"

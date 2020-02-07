@@ -1,8 +1,7 @@
 package com.wild.luxury.presenter
 
-import android.app.AlertDialog
 import android.util.Log
-import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.wild.luxury.network.Room
 import com.wild.luxury.App
 import com.wild.luxury.network.BuyProduct
@@ -30,7 +29,7 @@ class MainRoomPresenter {
             dialog!!.show()
         }
 
-        App.usersService.getRooms(roomId).enqueue(object : Callback<Room>{
+        App.usersService.getRooms(roomId).enqueue(object : Callback<Room> {
             override fun onFailure(call: Call<Room>, t: Throwable) {
                 view.showToast("$t")
                 Log.d("responceErr", "$t")
@@ -52,12 +51,12 @@ class MainRoomPresenter {
         view.changeActivity()
     }
 
-    fun onDelButtonClicked(delProduct: BuyProduct, builder: AlertDialog.Builder) {
+    private fun onDelButtonClicked(delProduct: BuyProduct, builder: AlertDialog.Builder) {
 
         dialog = builder.create()
         dialog!!.show()
 
-        App.usersService.deleteProduct(delProduct).enqueue(object : Callback<Product>{
+        App.usersService.deleteProduct(delProduct).enqueue(object : Callback<Product> {
             override fun onFailure(call: Call<Product>, t: Throwable) {
                 Log.d("reposnceErr", "${t.message}")
                 view.showToast("Ошибка: ${t.message}")
@@ -69,5 +68,22 @@ class MainRoomPresenter {
             }
 
         })
+    }
+
+    fun chooseBuilder(
+        chooseBuilder: AlertDialog.Builder,
+        product: Product,
+        builder: AlertDialog.Builder,
+        roomType: Int
+    ) {
+        chooseBuilder
+            .setItems(arrayOf("Подробности", "Удалить")) { dialog, with ->
+                if (with == 0) {
+                    view.viewProductDetails(product)
+                } else {
+                    onDelButtonClicked(BuyProduct(1, product.id, roomType), builder)
+                }
+            }.show()
+
     }
 }
