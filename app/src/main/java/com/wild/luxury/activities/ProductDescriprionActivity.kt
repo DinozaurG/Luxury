@@ -46,9 +46,9 @@ class ProductDescriprionActivity : AppCompatActivity() {
                 product.count = numBuy
                 intent.putExtra("product",product)
                 startActivity(intent)
+                finish()
             }
         }
-
     }
 }
 
