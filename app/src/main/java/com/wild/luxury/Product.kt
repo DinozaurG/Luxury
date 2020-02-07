@@ -8,7 +8,7 @@ data class Room(
     val area: Int,
     @SerializedName("max_product")val maxProducts: Int,
     @SerializedName("product_count")val productCount: Int,
-    @SerializedName("name_type")val roomType: String,
+    @SerializedName("room_type")val roomType: String,
     @SerializedName("products") val productList: List<Product>
 )
 data class Product (

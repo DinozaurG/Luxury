@@ -63,7 +63,7 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
             override fun onQueryTextChange(newText: String): Boolean {
                 val userInput = newText.toLowerCase()
                 val newList: List<Product> = ArrayList()
-                for (i in 0..items.size)
+                for (i in 0..items.size-1)
                 {
                     if(items[i].name.toLowerCase().contains(userInput))
                     {

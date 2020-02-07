@@ -55,7 +55,11 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
     }
 
     override fun showRoom(room: Room) {
-//        adapter.list = room.productList
-        adapter.setRoom(room)
+        adapter.list = room.productList
+        adapter.name = room.name
+        adapter.roomType = room.roomType
+        adapter.productCount = room.productCount.toString()
+        adapter.maxProduct = room.maxProducts.toString()
+        adapter.roomArea = room.area.toString()
     }
 }
