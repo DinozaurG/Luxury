@@ -1,11 +1,11 @@
-package com.wild.luxury.adapters
+package com.wild.luxury.activities.catalog
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.wild.luxury.Product
+import com.wild.luxury.network.Product
 import com.wild.luxury.R
 
 class CatalogAdapter(var items: MutableList<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {

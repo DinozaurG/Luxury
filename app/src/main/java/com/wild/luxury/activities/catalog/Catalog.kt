@@ -1,6 +1,5 @@
-package com.wild.luxury.activities
+package com.wild.luxury.activities.catalog
 
-import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
@@ -13,12 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.wild.luxury.CatalogList
-import com.wild.luxury.Product
+import com.wild.luxury.network.CatalogList
+import com.wild.luxury.network.Product
 import com.wild.luxury.R
-import com.wild.luxury.adapters.CatalogAdapter
-import com.wild.luxury.adapters.OnItemClickListener
-import com.wild.luxury.network.App
+import com.wild.luxury.activities.ProductDescriprionActivity
+import com.wild.luxury.App
 import kotlinx.android.synthetic.main.activity_catalog.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,7 +24,8 @@ import retrofit2.Response
 //import sun.jvm.hotspot.utilities.IntArray
 
 
-class Catalog : AppCompatActivity(), OnItemClickListener {
+class Catalog : AppCompatActivity(),
+    OnItemClickListener {
 
     private lateinit var toolbar : Toolbar
     private lateinit var adapter: CatalogAdapter
@@ -104,7 +103,10 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
             override fun onResponse(call: Call<CatalogList>, response: Response<CatalogList>) {
                 response.body()?.let {
                     items = it.products as MutableList<Product>
-                    adapter = CatalogAdapter(items, this@Catalog)
+                    adapter = CatalogAdapter(
+                        items,
+                        this@Catalog
+                    )
                     catalogRecView.adapter = adapter
 
                 }

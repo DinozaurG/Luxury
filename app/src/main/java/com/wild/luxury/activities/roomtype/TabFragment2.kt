@@ -1,4 +1,4 @@
-package com.wild.luxury.fragments
+package com.wild.luxury.activities.roomtype
 
 
 import android.content.Intent
@@ -9,10 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.wild.luxury.R
-import com.wild.luxury.activities.MainRoomActivity
+import com.wild.luxury.activities.room.MainRoomActivity
 import com.wild.luxury.presenter.RoomTypePresenter
 import com.wild.luxury.presenter.RoomTypeView
-import kotlinx.android.synthetic.main.fragment_tab_fragment1.*
 import kotlinx.android.synthetic.main.fragment_tab_fragment2.*
 
 /**

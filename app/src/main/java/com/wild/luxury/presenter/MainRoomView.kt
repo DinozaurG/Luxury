@@ -1,6 +1,6 @@
 package com.wild.luxury.presenter
 
-import com.wild.luxury.Room
+import com.wild.luxury.network.Room
 
 interface MainRoomView {
     fun changeActivity()

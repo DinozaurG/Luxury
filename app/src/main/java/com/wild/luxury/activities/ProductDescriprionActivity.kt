@@ -7,10 +7,11 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
-import com.wild.luxury.BuyProduct
-import com.wild.luxury.Product
+import com.wild.luxury.network.BuyProduct
+import com.wild.luxury.network.Product
 import com.wild.luxury.R
-import com.wild.luxury.network.App
+import com.wild.luxury.activities.room.MainRoomActivity
+import com.wild.luxury.App
 import kotlinx.android.synthetic.main.product_description.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -34,7 +35,8 @@ class ProductDescriprionActivity : AppCompatActivity() {
 
         buyProduct.setOnClickListener {
                 val intent = Intent(this, MainRoomActivity::class.java)
-                val productBuy = BuyProduct(1,product.id,1)
+                val productBuy =
+                    BuyProduct(1, product.id, 1)
                 postProduct(productBuy)
                 //intent.putExtra("product",product)
                 startActivity(intent)
@@ -44,7 +46,7 @@ class ProductDescriprionActivity : AppCompatActivity() {
     }
 
 
-    private fun postProduct(productBuy:BuyProduct){
+    private fun postProduct(productBuy: BuyProduct){
 
         App.usersService.postProduct(productBuy).enqueue(object : Callback<Product> {
             override fun onFailure(call: Call<Product>, t: Throwable) {

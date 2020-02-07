@@ -26,15 +26,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.MainRoomActivity" />
+        <activity android:name=".activities.room.MainRoomActivity" />
 
-        <activity android:name=".activities.RoomTypeActivity" />
+        <activity android:name=".activities.roomtype.RoomTypeActivity" />
         <meta-data
             android:name="android.app.default_searchable"
             android:value="com.apkgetter.SearchResultsActivity" />
 
         <activity
-            android:name=".activities.Catalog"
+            android:name=".activities.catalog.Catalog"
             android:label="@string/app_name"
             android:launchMode="singleTop" >
             <intent-filter>

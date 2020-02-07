@@ -1,11 +1,8 @@
-package com.wild.luxury.adapters
+package com.wild.luxury.activities.roomtype
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.wild.luxury.fragments.TabFragment1
-import com.wild.luxury.fragments.TabFragment2
-import com.wild.luxury.fragments.TabFragment3
 
 class ViewPagerAdapter(fm: FragmentManager): FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment {

@@ -1,4 +1,4 @@
-package com.wild.luxury.fragments
+package com.wild.luxury.activities.roomtype
 
 
 import android.content.Intent
@@ -9,15 +9,15 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.wild.luxury.R
-import com.wild.luxury.activities.MainRoomActivity
+import com.wild.luxury.activities.room.MainRoomActivity
 import com.wild.luxury.presenter.RoomTypePresenter
 import com.wild.luxury.presenter.RoomTypeView
-import kotlinx.android.synthetic.main.fragment_tab_fragment1.*
+import kotlinx.android.synthetic.main.fragment_tab_fragment3.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class TabFragment1 : Fragment(), RoomTypeView {
+class TabFragment3 : Fragment(), RoomTypeView {
 
     private val presenter = RoomTypePresenter()
 
@@ -25,7 +25,7 @@ class TabFragment1 : Fragment(), RoomTypeView {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_tab_fragment1, container, false)
+        return inflater.inflate(R.layout.fragment_tab_fragment3, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,14 +33,14 @@ class TabFragment1 : Fragment(), RoomTypeView {
 
         presenter.bindView(this)
 
-        buttonChooseRoomType1.setOnClickListener {
+        buttonChooseRoomType3.setOnClickListener {
             presenter.onButtonClick()
         }
     }
 
     override fun changeActivity() {
         val intent = Intent(activity, MainRoomActivity::class.java).apply {
-            putExtra("roomType", 3)
+            putExtra("roomType", 1)
         }
         startActivity(intent)
     }

@@ -2,9 +2,8 @@ package com.wild.luxury.presenter
 
 import android.app.AlertDialog
 import android.util.Log
-import android.widget.Toast
-import com.wild.luxury.Room
-import com.wild.luxury.network.App
+import com.wild.luxury.network.Room
+import com.wild.luxury.App
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

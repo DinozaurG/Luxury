@@ -1,4 +1,4 @@
-package com.wild.luxury
+package com.wild.luxury.network
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
@@ -10,10 +10,13 @@ data class Room(
     @SerializedName("max_product")val maxProducts: Int,
     @SerializedName("product_count")val productCount: Int,
     @SerializedName("room_type")val roomType: String,
-    @SerializedName("products") val productList: List<Product>
+    val products: List<Product>
+)
+data class CatalogList (
+    val products: List<Product>
 )
 data class Product (
-    @SerializedName("id")val id: Int,
+    val id: Int,
     val categoty: String,
     @SerializedName("category_id")val categotyId: Int,
     val name: String,
@@ -23,9 +26,6 @@ data class Product (
     @SerializedName("photo_url") val photoUrl:String
 ) : Serializable
 
-data class CatalogList (
-    val products: List<Product>
-)
 data class BuyProduct(
     @SerializedName("user_id") val userID:Int,
     @SerializedName("product_id") var productID:Int,

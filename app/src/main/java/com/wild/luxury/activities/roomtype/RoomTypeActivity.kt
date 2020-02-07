@@ -1,11 +1,8 @@
-package com.wild.luxury.activities
+package com.wild.luxury.activities.roomtype
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.wild.luxury.R
-import com.wild.luxury.adapters.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_room_type.*
 
 class RoomTypeActivity : AppCompatActivity() {
@@ -14,7 +11,10 @@ class RoomTypeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_room_type)
 
-        val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+        val viewPagerAdapter =
+            ViewPagerAdapter(
+                supportFragmentManager
+            )
         viewPager.adapter = viewPagerAdapter
 
         viewPager.currentItem = 1

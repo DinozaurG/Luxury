@@ -1,9 +1,5 @@
 package com.wild.luxury.network
 
-import com.wild.luxury.BuyProduct
-import com.wild.luxury.CatalogList
-import com.wild.luxury.Product
-import com.wild.luxury.Room
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -17,7 +13,7 @@ interface ApiService {
 
     @POST("products/buy")
     fun postProduct(
-        @Body buyProduct:BuyProduct
+        @Body buyProduct: BuyProduct
     ):Call<Product>
 
 
