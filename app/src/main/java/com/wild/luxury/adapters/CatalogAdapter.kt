@@ -3,34 +3,47 @@ package com.wild.luxury.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.Product
 import com.wild.luxury.R
 import com.wild.luxury.CatalogViewHolder
 
-class CatalogAdapter(var items: List<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogViewHolder>() {
+class CatalogAdapter(var items: List<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatalogViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.catalog_row, parent, false)
-        return CatalogViewHolder(view)
+        return ViewHolder(view)
     }
-
     override fun getItemCount() = items.size
-
-    override fun onBindViewHolder(holder: CatalogViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item : Product = items[position]
         holder.nme.text = items[position].name
         holder.price.text = items[position].price.toString()
         holder.desc.text = items[position].description
         holder.bind(item, itemClickListener)
+
     }
-    fun updateList(newList: List<Product>)
+    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
+        //val img: ImageView = itemView.findViewById(R.id.imageOfTovar)
+        val price: TextView = itemView.findViewById(R.id.priceOfTovar)
+        val desc: TextView = itemView.findViewById(R.id.describeOfTovar)
+        val nme: TextView = itemView.findViewById(R.id.nameOfTovar)
+        fun bind(item : Product, clickListener: OnItemClickListener)
+        {
+            itemView.setOnClickListener {
+                clickListener.onItemClicked(item)
+            }
+        }
+    }
+
+    fun updateList(newList: ArrayList<Product>)
     {
         items = newList
         notifyDataSetChanged()
     }
 }
-
 interface OnItemClickListener{
     fun onItemClicked(item: Product)
 }
