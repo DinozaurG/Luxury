@@ -18,11 +18,7 @@ class CatalogAdapter(var items: MutableList<Product>, val itemClickListener: OnI
 
     override fun onBindViewHolder(holder: CatalogViewHolder, position: Int) {
         val item : Product = items[position]
-        holder.nme.text = items[position].name
-        holder.price.text = items[position].price.toString()
-        holder.desc.text = items[position].description
         holder.bind(item, itemClickListener)
-
     }
 
     fun updateList(newList: MutableList<Product>) {

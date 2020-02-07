@@ -1,17 +1,17 @@
 package com.wild.luxury.activities.catalog
 
 import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.wild.luxury.R
+import com.squareup.picasso.Picasso
 import com.wild.luxury.network.Product
+import kotlinx.android.synthetic.main.catalog_row.view.*
 
 class CatalogViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-    //val img: ImageView = itemView.findViewById(R.id.imageOfTovar)
-    val price: TextView = itemView.findViewById(R.id.priceOfTovar)
-    val desc: TextView = itemView.findViewById(R.id.describeOfTovar)
-    val nme: TextView = itemView.findViewById(R.id.nameOfTovar)
     fun bind(item : Product, clickListener: OnItemClickListener) {
+        Picasso.get().load(item.photoUrl).into(itemView.item_image)
+        itemView.item_name.text = item.name
+        itemView.item_text_category.text = item.category
+        itemView.item_text_count.text = "${item.price} руб."
         itemView.setOnClickListener {
             clickListener.onItemClicked(item)
         }
