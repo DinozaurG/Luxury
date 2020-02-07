@@ -9,7 +9,7 @@ class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val intent = Intent(this, RoomTypeActivity::class.java)
+        val intent = Intent(this, Catalog::class.java)
 
         startActivity(intent)
 

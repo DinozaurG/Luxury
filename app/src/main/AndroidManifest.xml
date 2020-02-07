@@ -25,8 +25,25 @@
         <activity android:name=".activities.MainRoomActivity" />
 
         <activity android:name=".activities.RoomTypeActivity" />
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value="com.apkgetter.SearchResultsActivity" />
 
-        <activity android:name=".activities.Catalog" />
+        <activity
+            android:name=".activities.Catalog"
+            android:label="@string/app_name"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
 
         <activity android:name=".activities.ProductDescriprionActivity" />
 
