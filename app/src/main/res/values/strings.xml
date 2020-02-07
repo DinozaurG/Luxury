@@ -11,4 +11,5 @@
     <string name="econom_area">Площадь: 50м2</string>
     <string name="econom_furniture">До 10 предметов мебели</string>
     <string name="econom_coin">500 баллов на счёт</string>
+    <string name="search_hint">Поиск по каталогу</string>
 </resources>
