@@ -3,6 +3,7 @@ package com.wild.luxury.activities.catalog
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -30,10 +31,12 @@ class CatalogActivity : AppCompatActivity(),
     private lateinit var toolbar : Toolbar
     private lateinit var adapter: CatalogAdapter
     lateinit var items: MutableList<Product>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalog)
         toolbar = findViewById(R.id.toolbar)
+        toolbar.setTitleTextColor(Color.WHITE)
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Каталог"
 
@@ -87,8 +90,11 @@ class CatalogActivity : AppCompatActivity(),
     }
 
     override fun onItemClicked(item: Product) {
+
+        val roomType = intent.getIntExtra("roomType", -1)
         val intent = Intent(this, ProductDescriprionActivity::class.java)
         intent.putExtra("product", item)
+        intent.putExtra("roomType", roomType)
         startActivity(intent)
     }
 

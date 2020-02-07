@@ -35,10 +35,12 @@ class ProductDescriprionActivity : AppCompatActivity() {
         buyButton.text = "Buy"
 
         buyButton.setOnClickListener {
-            postProduct(BuyProduct(1, product.id, 1))
+
+            val roomType = intent.getIntExtra("roomType", -1)
+            postProduct(BuyProduct(1, product.id, roomType))
 
             val intent = Intent(this, MainRoomActivity::class.java)
-            //intent.putExtra("product",product)
+            intent.putExtra("roomType", roomType)
             startActivity(intent)
             finish()
         }
@@ -57,8 +59,6 @@ class ProductDescriprionActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
-                Toast.makeText(this@ProductDescriprionActivity, "Successful", Toast.LENGTH_SHORT)
-                    .show()
                 response.body()
                 Log.d("Suc", "Successful!")
             }

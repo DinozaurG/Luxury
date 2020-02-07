@@ -21,6 +21,7 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
     private val presenter = MainRoomPresenter()
     private val adapter = RoomAdapter()
     private lateinit var builder: AlertDialog.Builder
+    private var roomType: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,12 +42,12 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     override fun onResume() {
         super.onResume()
-
-        presenter.updateRoomItems(intent.getIntExtra("roomType", 2), builder)
+        roomType = intent.getIntExtra("roomType", -1)
+        presenter.updateRoomItems(roomType, builder)
     }
     override fun changeActivity() {
         val intent = Intent(this, CatalogActivity::class.java)
-//            .apply { roomType?.let { putExtra("roomType", roomType) } }
+        intent.putExtra("roomType", roomType)
         startActivity(intent)
     }
 
