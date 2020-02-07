@@ -16,5 +16,8 @@ interface ApiService {
         @Body buyProduct: BuyProduct
     ):Call<Product>
 
-
+    @POST("/products/delete")
+    fun deleteProduct(
+        @Body buyProduct: BuyProduct
+    ):Call<Product>
 }

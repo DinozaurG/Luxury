@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.network.Product
 import com.wild.luxury.R
 
-class RoomAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RoomAdapter(private val clickListener: (Product) -> Unit): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var name: String = ""
     var roomType: String = ""
@@ -24,7 +24,8 @@ class RoomAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return if (viewType == 0) {
             RoomViewHolder(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.activity_main_room_item, parent, false)
+                    .inflate(R.layout.activity_main_room_item, parent, false),
+                clickListener
             )
         } else {
             HeaderViewHolder(

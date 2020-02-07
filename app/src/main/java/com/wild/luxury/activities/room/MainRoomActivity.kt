@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.wild.luxury.R
 import com.wild.luxury.network.Room
 import com.wild.luxury.activities.catalog.CatalogActivity
+import com.wild.luxury.network.BuyProduct
 import com.wild.luxury.presenter.MainRoomPresenter
 import com.wild.luxury.presenter.MainRoomView
 import kotlinx.android.synthetic.main.activity_main_room.*
@@ -19,7 +20,9 @@ import kotlinx.android.synthetic.main.activity_main_room_item_header.*
 class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     private val presenter = MainRoomPresenter()
-    private val adapter = RoomAdapter()
+    private val adapter = RoomAdapter{
+        presenter.onDelButtonClicked(BuyProduct(1, it.id, roomType), builder)
+    }
     private lateinit var builder: AlertDialog.Builder
     private var roomType: Int = -1
 
@@ -42,6 +45,10 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     override fun onResume() {
         super.onResume()
+        updateList()
+    }
+
+    override fun updateList() {
         roomType = intent.getIntExtra("roomType", -1)
         presenter.updateRoomItems(roomType, builder)
     }

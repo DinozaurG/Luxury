@@ -7,4 +7,5 @@ interface MainRoomView {
     fun showToast(message: String)
     fun showRoom(room: Room)
     fun changeVisibility()
+    fun updateList()
 }
