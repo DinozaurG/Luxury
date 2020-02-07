@@ -59,13 +59,13 @@
 
         <ImageView
             android:id="@+id/image2_OK1"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/text2_area1"
             app:layout_constraintEnd_toStartOf="@id/text2_area1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text2_area1"
-            app:layout_constraintBottom_toBottomOf="@id/text2_area1"
             app:srcCompat="@android:drawable/checkbox_on_background"
             tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -75,7 +75,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/econom_area"
+            android:text="@string/standart_area"
             android:gravity="center|start"
             android:textAllCaps="false"
             android:textSize="20sp"
@@ -87,13 +87,13 @@
 
         <ImageView
             android:id="@+id/image2_OK2"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_margin="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/text2_area2"
             app:layout_constraintEnd_toStartOf="@id/text2_area2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text2_area2"
-            app:layout_constraintBottom_toBottomOf="@id/text2_area2"
             app:srcCompat="@android:drawable/checkbox_on_background"
             tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -103,7 +103,7 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/econom_furniture"
+            android:text="@string/standart_furniture"
             android:gravity="center|start"
             android:textSize="20sp"
             android:textColor="@color/colorSecondary"
@@ -114,8 +114,8 @@
 
         <ImageView
             android:id="@+id/image2_OK3"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
             android:layout_margin="8dp"
             app:layout_constraintBottom_toTopOf="@+id/buttonChooseRoomType2"
             app:layout_constraintEnd_toStartOf="@id/text2_area3"
@@ -131,7 +131,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/econom_coin"
+            android:text="@string/standart_info"
             android:gravity="center|start"
             android:textSize="20sp"
             android:textColor="@color/colorSecondary"

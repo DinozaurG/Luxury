@@ -34,7 +34,7 @@
             android:value="com.apkgetter.SearchResultsActivity" />
 
         <activity
-            android:name=".activities.catalog.Catalog"
+            android:name=".activities.catalog.CatalogActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop" >
             <intent-filter>

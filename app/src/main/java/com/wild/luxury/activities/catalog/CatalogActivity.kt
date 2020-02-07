@@ -24,7 +24,7 @@ import retrofit2.Response
 //import sun.jvm.hotspot.utilities.IntArray
 
 
-class Catalog : AppCompatActivity(),
+class CatalogActivity : AppCompatActivity(),
     OnItemClickListener {
 
     private lateinit var toolbar : Toolbar
@@ -95,7 +95,7 @@ class Catalog : AppCompatActivity(),
 
         App.usersService.getProducts().enqueue(object : Callback<CatalogList> {
             override fun onFailure(call: Call<CatalogList>, t: Throwable) {
-                Toast.makeText(this@Catalog, "${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@CatalogActivity, "${t.message}", Toast.LENGTH_SHORT).show()
                 Log.d("responceErr", "${t.message}")
 
             }
@@ -105,7 +105,7 @@ class Catalog : AppCompatActivity(),
                     items = it.products as MutableList<Product>
                     adapter = CatalogAdapter(
                         items,
-                        this@Catalog
+                        this@CatalogActivity
                     )
                     catalogRecView.adapter = adapter
 

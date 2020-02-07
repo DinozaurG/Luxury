@@ -11,7 +11,7 @@ class App : Application() {
     companion object {
         private val retrofit =
             Retrofit.Builder()
-                .baseUrl("http://172.20.46.85:5005/")
+                .baseUrl("http://192.168.1.44:7777/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
         val usersService = retrofit.create(

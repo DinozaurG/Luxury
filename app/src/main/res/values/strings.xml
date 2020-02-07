@@ -9,8 +9,14 @@
     <string name="bo">bo</string>
     <string name="any_information">Any information</string>
     <string name="econom_area">Площадь: 50м2</string>
-    <string name="econom_furniture">До 10 предметов мебели</string>
-    <string name="econom_coin">500 баллов на счёт</string>
+    <string name="econom_furniture">До 15 предметов мебели</string>
+    <string name="econom_info">Дёшево и сердито</string>
     <string name="search_hint">Поиск по каталогу</string>
     <string name="loading">Загрузка...</string>
+    <string name="standart_area">Площадь: 100м2</string>
+    <string name="standart_furniture">До 20 предметов мебели</string>
+    <string name="luxury_area">Площадь: 150м2</string>
+    <string name="luxury_furniture">До 25 предметов мебели</string>
+    <string name="luxury_info">Её ты видел во сне</string>
+    <string name="standart_info">Займи, но купи</string>
 </resources>

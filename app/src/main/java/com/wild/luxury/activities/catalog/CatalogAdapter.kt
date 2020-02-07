@@ -8,31 +8,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.network.Product
 import com.wild.luxury.R
 
-class CatalogAdapter(var items: MutableList<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
+class CatalogAdapter(var items: MutableList<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CatalogViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.catalog_row, parent, false)
-        return ViewHolder(view)
+        return CatalogViewHolder(view)
     }
     override fun getItemCount() = items.size
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+    override fun onBindViewHolder(holder: CatalogViewHolder, position: Int) {
         val item : Product = items[position]
         holder.nme.text = items[position].name
         holder.price.text = items[position].price.toString()
         holder.desc.text = items[position].description
         holder.bind(item, itemClickListener)
 
-    }
-    class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        //val img: ImageView = itemView.findViewById(R.id.imageOfTovar)
-        val price: TextView = itemView.findViewById(R.id.priceOfTovar)
-        val desc: TextView = itemView.findViewById(R.id.describeOfTovar)
-        val nme: TextView = itemView.findViewById(R.id.nameOfTovar)
-        fun bind(item : Product, clickListener: OnItemClickListener) {
-            itemView.setOnClickListener {
-                clickListener.onItemClicked(item)
-            }
-        }
     }
 
     fun updateList(newList: MutableList<Product>) {

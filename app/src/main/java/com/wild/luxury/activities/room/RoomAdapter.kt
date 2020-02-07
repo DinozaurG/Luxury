@@ -1,12 +1,10 @@
 package com.wild.luxury.activities.room
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.network.Product
 import com.wild.luxury.R
-import kotlinx.android.synthetic.main.activity_main_room_item_image.view.*
 
 class RoomAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -29,9 +27,9 @@ class RoomAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     .inflate(R.layout.activity_main_room_item, parent, false)
             )
         } else {
-            ImageViewHolder(
+            HeaderViewHolder(
                 LayoutInflater.from(parent.context)
-                    .inflate(R.layout.activity_main_room_item_image, parent, false)
+                    .inflate(R.layout.activity_main_room_item_header, parent, false)
             )
         }
     }
@@ -44,7 +42,7 @@ class RoomAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return if (holder.itemViewType == 0) {
             (holder as RoomViewHolder).bind(list[position-1])
         } else {
-            (holder as ImageViewHolder).bind(
+            (holder as HeaderViewHolder).bind(
                 name,
                 roomType,
                 roomArea,

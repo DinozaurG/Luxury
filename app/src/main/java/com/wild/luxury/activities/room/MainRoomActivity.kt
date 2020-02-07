@@ -4,12 +4,13 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.wild.luxury.R
 import com.wild.luxury.network.Room
-import com.wild.luxury.activities.catalog.Catalog
+import com.wild.luxury.activities.catalog.CatalogActivity
 import com.wild.luxury.presenter.MainRoomPresenter
 import com.wild.luxury.presenter.MainRoomView
 import kotlinx.android.synthetic.main.activity_main_room.*
@@ -43,7 +44,7 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
         presenter.updateRoomItems(intent.getIntExtra("roomType", 2), builder)
     }
     override fun changeActivity() {
-        val intent = Intent(this, Catalog::class.java)
+        val intent = Intent(this, CatalogActivity::class.java)
 //            .apply { roomType?.let { putExtra("roomType", roomType) } }
         startActivity(intent)
     }
