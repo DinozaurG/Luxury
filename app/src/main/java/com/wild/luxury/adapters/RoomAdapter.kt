@@ -3,6 +3,7 @@ package com.wild.luxury.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.Product
 import com.wild.luxury.R
@@ -11,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_main_room_item.view.*
 import kotlinx.android.synthetic.main.activity_main_room_item_image.view.*
 
 class RoomAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
 
     var name: String = ""
     var roomType: String = ""
@@ -71,10 +71,12 @@ class ImageViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         itemView.room_area.text = roomArea
         itemView.room_product_count.text = roomProductCount
         itemView.room_max_product.text = roomMaxProducts
+
         when (roomType) {
             "lux" -> itemView.roomImage.setImageResource(R.drawable.luxury_hotel_room)
-            "standart" -> itemView.roomImage.setImageResource(R.drawable.standart_hotel_room)
-            else -> itemView.roomImage.setImageResource(R.drawable.econom_hotel_room)
+            "standard" -> itemView.roomImage.setImageResource(R.drawable.standart_hotel_room)
+            "loh" -> itemView.roomImage.setImageResource(R.drawable.econom_hotel_room)
+            else -> Unit
         }
     }
 }

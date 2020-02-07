@@ -25,6 +25,7 @@
         android:clickable="true"
         android:layout_gravity="end|bottom"
         android:layout_margin="8dp"
+        android:visibility="gone"
         app:fabSize="normal"
         app:srcCompat="@drawable/ic_add_red_24dp" />
 

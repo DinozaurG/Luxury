@@ -1,5 +1,6 @@
 package com.wild.luxury.activities
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,13 +23,10 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     private val presenter = MainRoomPresenter()
     private val adapter = RoomAdapter()
-    private var roomType: Int = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_room)
-
-        roomType = intent.getIntExtra("roomType", 2)
 
         presenter.bindView(this)
 
@@ -42,9 +40,10 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     override fun onResume() {
         super.onResume()
-        //TODO change this, do save data in savedInstanceState
-        presenter.updateRoomItems(roomType)
-        Toast.makeText(this, ""+roomType, Toast.LENGTH_SHORT).show()
+        val builder = AlertDialog.Builder(this)
+        builder.setView(R.layout.progress_dialog)
+        builder.setCancelable(false)
+        presenter.updateRoomItems(intent.getIntExtra("roomType", 2), builder)
     }
 
     override fun changeActivity() {
@@ -64,5 +63,9 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
         adapter.productCount = room.productCount.toString()
         adapter.maxProduct = room.maxProducts.toString()
         adapter.roomArea = room.area.toString()
+    }
+
+    override fun changeFabVisibility() {
+        fab.visibility = View.VISIBLE
     }
 }
