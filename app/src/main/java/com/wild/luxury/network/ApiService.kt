@@ -11,7 +11,7 @@ interface ApiService {
     @GET("catalog")
     fun getProducts(): Call<CatalogList>
 
-    @GET("rooms")
-    fun gerRooms(): Call<List<Room>>
+    @GET("rooms/{id}")
+    fun getRooms(@Path("id") id: Int): Call<Room>
 
 }
