@@ -1,5 +1,6 @@
 package com.wild.luxury.activities
 
+import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
@@ -27,10 +28,9 @@ import retrofit2.Response
 
 class Catalog : AppCompatActivity(), OnItemClickListener {
 
-//    val items: ArrayList<Product> = ArrayList()
     private lateinit var toolbar : Toolbar
     private lateinit var adapter: CatalogAdapter
-
+    lateinit var items: List<Product>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalog)
@@ -60,10 +60,19 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
                 Toast.makeText(this@Catalog,"Submitted",Toast.LENGTH_LONG).show()
                 return false
             }
-
             override fun onQueryTextChange(newText: String): Boolean {
+                val userInput = newText.toLowerCase()
+                val newList: List<Product> = ArrayList()
+                for (i in 0..items.size)
+                {
+                    if(items[i].name.toLowerCase().contains(userInput))
+                    {
+                        newList.plus(items[i])
+                    }
+                }
+                adapter.updateList(newList)
                 Toast.makeText(this@Catalog,"Changed",Toast.LENGTH_LONG).show()
-                return false
+                return true
             }
         })
         return super.onCreateOptionsMenu(menu)
@@ -86,8 +95,8 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
 
             override fun onResponse(call: Call<CatalogList>, response: Response<CatalogList>) {
                 response.body()?.let {
-
-                    adapter = CatalogAdapter(it.products, this@Catalog)
+                    items = it.products
+                    adapter = CatalogAdapter(items, this@Catalog)
                     catalogRecView.adapter = adapter
 
                 }
