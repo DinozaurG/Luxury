@@ -57,8 +57,17 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
         searchView?.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
-                Toast.makeText(this@Catalog,"Submitted",Toast.LENGTH_LONG).show()
-                return false
+                val userInput = query.toLowerCase()
+                val newList: MutableList<Product> = ArrayList()
+                for (i in 0..items.size-1)
+                {
+                    if(items[i].name.toLowerCase().contains(userInput))
+                    {
+                        newList.add(items[i])
+                    }
+                }
+                adapter.updateList(newList)
+                return true
             }
             override fun onQueryTextChange(newText: String): Boolean {
                 val userInput = newText.toLowerCase()
@@ -71,7 +80,6 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
                     }
                 }
                 adapter.updateList(newList)
-                Toast.makeText(this@Catalog,"Changed",Toast.LENGTH_LONG).show()
                 return true
             }
         })
