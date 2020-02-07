@@ -22,11 +22,13 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     private val presenter = MainRoomPresenter()
     private val adapter = RoomAdapter()
-//    private var roomType: String? = null
+    private var roomType: Int = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_room)
+
+        roomType = intent.getIntExtra("roomType", 2)
 
         presenter.bindView(this)
 
@@ -41,7 +43,8 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
     override fun onResume() {
         super.onResume()
         //TODO change this, do save data in savedInstanceState
-        presenter.updateRoomItems(1)
+        presenter.updateRoomItems(roomType)
+        Toast.makeText(this, ""+roomType, Toast.LENGTH_SHORT).show()
     }
 
     override fun changeActivity() {

@@ -41,7 +41,7 @@ class TabFragment2 : Fragment(), RoomTypeView{
 
     override fun changeActivity() {
         val intent = Intent(activity, MainRoomActivity::class.java).apply {
-            putExtra("roomType", "Moderate")
+            putExtra("roomType", 2)
         }
         startActivity(intent)
     }
