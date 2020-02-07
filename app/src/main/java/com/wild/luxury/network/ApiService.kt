@@ -14,4 +14,11 @@ interface ApiService {
     @GET("rooms/{id}")
     fun getRooms(@Path("id") id: Int): Call<Room>
 
+    @POST("product/buy")
+    @FormUrlEncoded
+    fun postProduct(productId:Int,roomId:Int,userId:Int):Call<Product>
+
+    @DELETE("product/{id}")
+    fun deleteProduct(@Path("id") id: Int): Call<Product>
+
 }

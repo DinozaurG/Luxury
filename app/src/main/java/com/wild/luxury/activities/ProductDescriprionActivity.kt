@@ -17,38 +17,37 @@ class ProductDescriprionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_description)
 
-        val numProduct : TextView = findViewById(R.id.textNum)
+        val product = intent.getSerializableExtra("product") as Product
 
-        var product = intent.getSerializableExtra("product") as Product
+        Picasso.get().load("https://imageog.flaticon.com/icons/png/512/89/89981.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF").into(imageView)
 
         productName.text = product.name
         textDescription.text = product.description
 
-
-        var numBuy = 0
-        numProduct.text = numBuy.toString()
-        addButton.setOnClickListener {
-            numBuy++
-            buyProduct.text = "Купить: ${numBuy * product.price}"
-            numProduct.text = numBuy.toString()
-        }
-        removeButton.setOnClickListener {
-            if(numBuy!=0){
-                numBuy--
-                buyProduct.text = "Купить: ${numBuy * product.price}"
-                numProduct.text = numBuy.toString()
-            }
-        }
-
         buyProduct.setOnClickListener {
-            if(numBuy!=0){
                 val intent = Intent(this, MainRoomActivity::class.java)
-                product.count = numBuy
-                intent.putExtra("product",product)
+                postProduct(product.id,1 ,1)
+                //intent.putExtra("product",product)
                 startActivity(intent)
-                finish()
-            }
         }
+
+    }
+
+
+    private fun postProduct(productId:Int,roomId:Int,userId:Int){
+
+        App.usersService.postProduct(productId,roomId,userId).enqueue(object : Callback<Product> {
+            override fun onFailure(call: Call<Product>, t: Throwable) {
+                Toast.makeText(this@ProductDescriprionActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+                Log.d("responceErr", "${t.message}")
+
+            }
+
+            override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                response.body()
+                Log.d("Suc","Successful!")
+            }
+        })
     }
 }
 

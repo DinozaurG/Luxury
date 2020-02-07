@@ -16,10 +16,4 @@ class App : Application() {
                 .build()
         val usersService = retrofit.create(ApiService::class.java)
     }
-
-    override fun onCreate() {
-        super.onCreate()
-
-    }
-
 }

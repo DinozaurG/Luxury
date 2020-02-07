@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Room(
+    @SerializedName("room_id") val id:Int,
     val name: String,
     val area: Int,
     @SerializedName("max_product")val maxProducts: Int,
@@ -12,7 +13,7 @@ data class Room(
     @SerializedName("products") val productList: List<Product>
 )
 data class Product (
-    val id: Int,
+    @SerializedName("product_id")val id: Int,
     val categoty: String,
     @SerializedName("category_id")val categotyId: Int,
     val name: String,
@@ -25,3 +26,4 @@ data class Product (
 data class CatalogList (
     val products: List<Product>
 )
+
