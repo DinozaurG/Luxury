@@ -14,6 +14,7 @@ import com.wild.luxury.activities.catalog.CatalogActivity
 import com.wild.luxury.presenter.MainRoomPresenter
 import com.wild.luxury.presenter.MainRoomView
 import kotlinx.android.synthetic.main.activity_main_room.*
+import kotlinx.android.synthetic.main.activity_main_room_item_header.*
 
 class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
@@ -62,7 +63,8 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
         adapter.roomArea = room.area.toString()
     }
 
-    override fun changeFabVisibility() {
+    override fun changeVisibility() {
         fab.visibility = View.VISIBLE
+        cardView.visibility = View.VISIBLE
     }
 }

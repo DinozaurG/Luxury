@@ -30,7 +30,7 @@ class MainRoomPresenter {
             override fun onResponse(call: Call<Room>, response: Response<Room>) {
                 response.body()?.let {
                     view.showRoom(it)
-                    view.changeFabVisibility()
+                    view.changeVisibility()
                 }
                 dialog.dismiss()
             }

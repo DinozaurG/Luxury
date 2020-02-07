@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.wild.luxury.activities.roomtype.RoomTypeActivity
 
 class SplashScreen : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
