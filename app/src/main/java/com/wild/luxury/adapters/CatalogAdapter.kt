@@ -10,7 +10,7 @@ import com.wild.luxury.Product
 import com.wild.luxury.R
 import com.wild.luxury.CatalogViewHolder
 
-class CatalogAdapter(var items: List<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
+class CatalogAdapter(var items: MutableList<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view : View = LayoutInflater.from(parent.context).inflate(R.layout.catalog_row, parent, false)
@@ -38,7 +38,7 @@ class CatalogAdapter(var items: List<Product>, val itemClickListener: OnItemClic
         }
     }
 
-    fun updateList(newList: ArrayList<Product>)
+    fun updateList(newList: MutableList<Product>)
     {
         items = newList
         notifyDataSetChanged()
