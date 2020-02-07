@@ -11,7 +11,7 @@ class CatalogViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         Picasso.get().load(item.photoUrl).into(itemView.item_image)
         itemView.item_name.text = item.name
         itemView.item_text_category.text = item.category
-        itemView.item_text_count.text = "${item.price} руб."
+        itemView.item_text_count.text = "${item.price} $"
         itemView.setOnClickListener {
             clickListener.onItemClicked(item)
         }

@@ -27,38 +27,40 @@ class ProductDescriprionActivity : AppCompatActivity() {
 
         val product = intent.getSerializableExtra("product") as Product
 
-        Picasso.get().load("https://imageog.flaticon.com/icons/png/512/89/89981.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF").into(imageView)
-
+        Picasso.get().load(product.photoUrl).into(imageView)
         productName.text = product.name
+        product_category.text = product.category
+        product_price.text = "${product.price} $"
         textDescription.text = product.description
-        buyProduct.text = "Купить : ${product.price}"
+        buyButton.text = "Buy"
 
-        buyProduct.setOnClickListener {
-                val intent = Intent(this, MainRoomActivity::class.java)
-                val productBuy =
-                    BuyProduct(1, product.id, 1)
-                postProduct(productBuy)
-                //intent.putExtra("product",product)
-                startActivity(intent)
-                finish()
+        buyButton.setOnClickListener {
+            postProduct(BuyProduct(1, product.id, 1))
+
+            val intent = Intent(this, MainRoomActivity::class.java)
+            //intent.putExtra("product",product)
+            startActivity(intent)
+            finish()
         }
 
     }
 
 
-    private fun postProduct(productBuy: BuyProduct){
+    private fun postProduct(productBuy: BuyProduct) {
 
         App.usersService.postProduct(productBuy).enqueue(object : Callback<Product> {
             override fun onFailure(call: Call<Product>, t: Throwable) {
-                Toast.makeText(this@ProductDescriprionActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ProductDescriprionActivity, "${t.message}", Toast.LENGTH_SHORT)
+                    .show()
                 Log.d("responceError", "${t.message}")
 
             }
 
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
-                Toast.makeText(this@ProductDescriprionActivity, "Successful", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ProductDescriprionActivity, "Successful", Toast.LENGTH_SHORT)
+                    .show()
                 response.body()
-                Log.d("Suc","Successful!")
+                Log.d("Suc", "Successful!")
             }
         })
     }
