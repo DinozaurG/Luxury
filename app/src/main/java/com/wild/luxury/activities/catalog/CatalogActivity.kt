@@ -35,6 +35,7 @@ class CatalogActivity : AppCompatActivity(),
         setContentView(R.layout.activity_catalog)
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.title = "Каталог"
 
         catalogRecView.layoutManager = LinearLayoutManager(this)
 
