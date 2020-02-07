@@ -17,7 +17,7 @@ data class CatalogList (
 )
 data class Product (
     val id: Int,
-    val categoty: String,
+    val category: String,
     @SerializedName("category_id")val categotyId: Int,
     val name: String,
     val price: Int,

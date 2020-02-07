@@ -10,6 +10,7 @@ class RoomViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     fun bind(product: Product) {
         Picasso.get().load(product.photoUrl).into(itemView.item_image)
         itemView.item_name.text = product.name
-        itemView.item_text_count.text = product.count.toString()
+        itemView.item_text_category.text = product.category
+        itemView.item_text_count.text = "Количество: ${product.count} шт."
     }
 }

@@ -65,6 +65,6 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     override fun changeVisibility() {
         fab.visibility = View.VISIBLE
-        cardView.visibility = View.VISIBLE
+        layout.visibility = View.VISIBLE
     }
 }

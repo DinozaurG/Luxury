@@ -47,7 +47,8 @@ class RoomAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 roomType,
                 roomArea,
                 maxProduct,
-                productCount
+                productCount,
+                list.size
             )
         }
     }
