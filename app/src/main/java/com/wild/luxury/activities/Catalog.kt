@@ -30,7 +30,7 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
 
     private lateinit var toolbar : Toolbar
     private lateinit var adapter: CatalogAdapter
-    lateinit var items: List<Product>
+    lateinit var items: ArrayList<Product>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_catalog)
@@ -62,7 +62,7 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
             }
             override fun onQueryTextChange(newText: String): Boolean {
                 val userInput = newText.toLowerCase()
-                val newList: List<Product> = ArrayList()
+                val newList: ArrayList<Product> = ArrayList()
                 for (i in 0..items.size-1)
                 {
                     if(items[i].name.toLowerCase().contains(userInput))
@@ -95,8 +95,8 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
 
             override fun onResponse(call: Call<CatalogList>, response: Response<CatalogList>) {
                 response.body()?.let {
-                    items = it.products
-                    adapter = CatalogAdapter(items, this@Catalog)
+                    items = it.products as ArrayList<Product>
+                    adapter = CatalogAdapter(it.products, this@Catalog)
                     catalogRecView.adapter = adapter
 
                 }
