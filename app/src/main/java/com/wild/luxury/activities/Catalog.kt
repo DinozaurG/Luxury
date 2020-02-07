@@ -59,11 +59,11 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 val userInput = query.toLowerCase()
                 val newList: MutableList<Product> = ArrayList()
-                for (i in 0..items.size-1)
-                {
-                    if(items[i].name.toLowerCase().contains(userInput))
-                    {
-                        newList.add(items[i])
+                if(items.isNotEmpty()) {
+                    for (i in 0 until items.size) {
+                        if (items[i].name.toLowerCase().contains(userInput)) {
+                            newList.add(items[i])
+                        }
                     }
                 }
                 adapter.updateList(newList)
@@ -72,11 +72,11 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
             override fun onQueryTextChange(newText: String): Boolean {
                 val userInput = newText.toLowerCase()
                 val newList: MutableList<Product> = ArrayList()
-                for (i in 0..items.size-1)
-                {
-                    if(items[i].name.toLowerCase().contains(userInput))
-                    {
-                        newList.add(items[i])
+                if(items.isNotEmpty()) {
+                    for (i in 0 until items.size) {
+                        if (items[i].name.toLowerCase().contains(userInput)) {
+                            newList.add(items[i])
+                        }
                     }
                 }
                 adapter.updateList(newList)
@@ -94,7 +94,7 @@ class Catalog : AppCompatActivity(), OnItemClickListener {
 
     private fun getCatalogList(){
 
-        App.usersService.getProducts().enqueue(object : Callback<CatalogList>{
+        App.usersService.getProducts().enqueue(object : Callback<CatalogList> {
             override fun onFailure(call: Call<CatalogList>, t: Throwable) {
                 Toast.makeText(this@Catalog, "${t.message}", Toast.LENGTH_SHORT).show()
                 Log.d("responceErr", "${t.message}")

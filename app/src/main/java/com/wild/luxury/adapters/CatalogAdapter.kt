@@ -3,12 +3,10 @@ package com.wild.luxury.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.wild.luxury.Product
 import com.wild.luxury.R
-import com.wild.luxury.CatalogViewHolder
 
 class CatalogAdapter(var items: MutableList<Product>, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
 
@@ -30,20 +28,18 @@ class CatalogAdapter(var items: MutableList<Product>, val itemClickListener: OnI
         val price: TextView = itemView.findViewById(R.id.priceOfTovar)
         val desc: TextView = itemView.findViewById(R.id.describeOfTovar)
         val nme: TextView = itemView.findViewById(R.id.nameOfTovar)
-        fun bind(item : Product, clickListener: OnItemClickListener)
-        {
+        fun bind(item : Product, clickListener: OnItemClickListener) {
             itemView.setOnClickListener {
                 clickListener.onItemClicked(item)
             }
         }
     }
 
-    fun updateList(newList: MutableList<Product>)
-    {
+    fun updateList(newList: MutableList<Product>) {
         items = newList
         notifyDataSetChanged()
     }
 }
-interface OnItemClickListener{
+interface OnItemClickListener {
     fun onItemClicked(item: Product)
 }
