@@ -29,6 +29,7 @@ class ProductDescriprionActivity : AppCompatActivity() {
 
         productName.text = product.name
         textDescription.text = product.description
+        buyProduct.text = "Купить : ${product.price}"
 
         buyProduct.setOnClickListener {
                 val intent = Intent(this, MainRoomActivity::class.java)
@@ -45,7 +46,7 @@ class ProductDescriprionActivity : AppCompatActivity() {
         App.usersService.postProduct(productId,roomId,userId).enqueue(object : Callback<Product> {
             override fun onFailure(call: Call<Product>, t: Throwable) {
                 Toast.makeText(this@ProductDescriprionActivity, "${t.message}", Toast.LENGTH_SHORT).show()
-                Log.d("responceErr", "${t.message}")
+                Log.d("responceError", "${t.message}")
 
             }
 
