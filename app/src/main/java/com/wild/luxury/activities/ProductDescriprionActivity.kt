@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
+import com.wild.luxury.BuyProduct
 import com.wild.luxury.Product
 import com.wild.luxury.R
 import com.wild.luxury.network.App
@@ -33,17 +34,19 @@ class ProductDescriprionActivity : AppCompatActivity() {
 
         buyProduct.setOnClickListener {
                 val intent = Intent(this, MainRoomActivity::class.java)
-                postProduct(product.id,1 ,1)
+                val productBuy = BuyProduct(1,product.id,1)
+                postProduct(productBuy)
                 //intent.putExtra("product",product)
                 startActivity(intent)
+                finish()
         }
 
     }
 
 
-    private fun postProduct(productId:Int,roomId:Int,userId:Int){
+    private fun postProduct(productBuy:BuyProduct){
 
-        App.usersService.postProduct(productId,roomId,userId).enqueue(object : Callback<Product> {
+        App.usersService.postProduct(productBuy).enqueue(object : Callback<Product> {
             override fun onFailure(call: Call<Product>, t: Throwable) {
                 Toast.makeText(this@ProductDescriprionActivity, "${t.message}", Toast.LENGTH_SHORT).show()
                 Log.d("responceError", "${t.message}")
@@ -51,6 +54,7 @@ class ProductDescriprionActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<Product>, response: Response<Product>) {
+                Toast.makeText(this@ProductDescriprionActivity, "Successful", Toast.LENGTH_SHORT).show()
                 response.body()
                 Log.d("Suc","Successful!")
             }
