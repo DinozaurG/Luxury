@@ -38,7 +38,7 @@ class CatalogAdapter(var items: List<Product>, val itemClickListener: OnItemClic
         }
     }
 
-    fun updateList(newList: ArrayList<Product>)
+    fun updateList(newList: List<Product>)
     {
         items = newList
         notifyDataSetChanged()
