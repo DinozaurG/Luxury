@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
 
 import com.wild.luxury.R
 import com.wild.luxury.activities.room.MainRoomActivity
@@ -31,9 +32,12 @@ class TabFragment3 : Fragment(), RoomTypeView {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val buttonClick = AlphaAnimation(1f, 0.2f)
+
         presenter.bindView(this)
 
         buttonChooseRoomType3.setOnClickListener {
+            it.startAnimation(buttonClick)
             presenter.onButtonClick()
         }
     }

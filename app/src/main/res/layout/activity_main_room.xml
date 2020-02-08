@@ -18,6 +18,21 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/activity_main_room_item"/>
 
+    <TextView
+        android:id="@+id/errMsg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:text="Нет соединения с сервером"
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

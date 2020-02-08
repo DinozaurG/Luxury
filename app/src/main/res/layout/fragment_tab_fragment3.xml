@@ -30,7 +30,8 @@
             android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/image3"
+            app:layout_constraintBottom_toTopOf="@id/text3_area1"/>
 
         <Button
             android:id="@+id/buttonChooseRoomType3"
@@ -53,7 +54,8 @@
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTittle3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/textViewTittle3"
             app:srcCompat="@drawable/luxury_hotel_room"
             tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -63,16 +65,16 @@
             android:layout_height="32dp"
 
             android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
 
+            app:layout_constraintBottom_toBottomOf="@id/text3_area1"
             app:layout_constraintEnd_toStartOf="@id/text3_area1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text3_area1"
-            app:layout_constraintBottom_toBottomOf="@id/text3_area1"
-            app:srcCompat="@android:drawable/checkbox_on_background"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            app:srcCompat="@drawable/galochka"
+            tools:src="@drawable/galochka" />
 
         <TextView
             android:id="@+id/text3_area1"
@@ -88,7 +90,7 @@
             app:layout_constraintBottom_toTopOf="@id/text3_area2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image3_OK1"
-            app:layout_constraintTop_toBottomOf="@+id/image3" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewTittle3" />
 
         <ImageView
             android:id="@+id/image3_OK2"
@@ -96,15 +98,15 @@
             android:layout_height="32dp"
 
             android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
 
+            app:layout_constraintBottom_toBottomOf="@id/text3_area2"
             app:layout_constraintEnd_toStartOf="@id/text3_area2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text3_area2"
-            app:layout_constraintBottom_toBottomOf="@id/text3_area2"
-            app:srcCompat="@android:drawable/checkbox_on_background"
+            app:srcCompat="@drawable/galochka"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
@@ -128,15 +130,15 @@
             android:layout_height="32dp"
 
             android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
 
             app:layout_constraintBottom_toBottomOf="@+id/text3_area3"
             app:layout_constraintEnd_toStartOf="@id/text3_area3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/text3_area3"
-            app:srcCompat="@android:drawable/checkbox_on_background"
+            app:srcCompat="@drawable/galochka"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView

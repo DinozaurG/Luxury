@@ -28,10 +28,10 @@
             android:textColor="@color/colorWhite"
             android:textSize="30sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/image1"
+            app:layout_constraintBottom_toTopOf="@id/text_area1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/image1"/>
 
         <Button
             android:id="@+id/buttonChooseRoomType1"
@@ -56,8 +56,8 @@
             android:src="@drawable/econom_hotel_room"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/text_area1"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTittle1"
+            app:layout_constraintBottom_toTopOf="@id/textViewTittle1"
+            app:layout_constraintTop_toTopOf="parent"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <ImageView
@@ -66,15 +66,15 @@
             android:layout_height="32dp"
 
             android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
 
+            app:layout_constraintBottom_toBottomOf="@id/text_area1"
             app:layout_constraintEnd_toStartOf="@id/text_area1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text_area1"
-            app:layout_constraintBottom_toBottomOf="@id/text_area1"
-            app:srcCompat="@android:drawable/checkbox_on_background"
+            app:srcCompat="@drawable/galochka"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
@@ -91,7 +91,7 @@
             app:layout_constraintBottom_toTopOf="@id/text_area2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_OK1"
-            app:layout_constraintTop_toBottomOf="@+id/image1" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewTittle1" />
 
 
         <ImageView
@@ -100,15 +100,15 @@
             android:layout_height="32dp"
 
             android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
 
+            app:layout_constraintBottom_toBottomOf="@id/text_area2"
             app:layout_constraintEnd_toStartOf="@id/text_area2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/text_area2"
-            app:layout_constraintBottom_toBottomOf="@id/text_area2"
-            app:srcCompat="@android:drawable/checkbox_on_background"
+            app:srcCompat="@drawable/galochka"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
@@ -132,15 +132,15 @@
             android:layout_height="32dp"
 
             android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
 
             app:layout_constraintBottom_toBottomOf="@id/text_area3"
             app:layout_constraintEnd_toStartOf="@id/text_area3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/text_area3"
-            app:srcCompat="@android:drawable/checkbox_on_background"
+            app:srcCompat="@drawable/galochka"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView

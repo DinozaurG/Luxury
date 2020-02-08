@@ -11,6 +11,7 @@ import com.wild.luxury.R
 import com.wild.luxury.activities.ProductDescriprionActivity
 import com.wild.luxury.network.Room
 import com.wild.luxury.activities.catalog.CatalogActivity
+import com.wild.luxury.activities.roomtype.RoomTypeActivity
 import com.wild.luxury.network.BuyProduct
 import com.wild.luxury.network.Product
 import com.wild.luxury.presenter.MainRoomPresenter
@@ -73,6 +74,8 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
 
     override fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        errMsg.visibility = View.VISIBLE
+        errMsg.text = "Нет соединения с сервером. Ошибка: $message"
     }
 
     override fun showRoom(room: Room) {
@@ -87,5 +90,11 @@ class MainRoomActivity : AppCompatActivity(), MainRoomView {
     override fun changeVisibility() {
         fab.visibility = View.VISIBLE
         layout.visibility = View.VISIBLE
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, RoomTypeActivity::class.java)
+        startActivity(intent)
     }
 }

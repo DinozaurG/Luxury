@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.animation.AlphaAnimation
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
@@ -27,14 +28,23 @@ class ProductDescriprionActivity : AppCompatActivity() {
 
         val product = intent.getSerializableExtra("product") as Product
 
-        Picasso.get().load(product.photoUrl).into(imageView)
+        Picasso.get()
+            .load(product.photoUrl)
+            .placeholder(R.drawable.loading_img)
+            .error(R.drawable.ic_broken_image)
+            .into(imageView)
+
         productName.text = product.name
         product_category.text = product.category
         product_price.text = "${product.price} $"
         textDescription.text = product.description
         buyButton.text = "Buy"
 
+        val buttonClick = AlphaAnimation(1f, 0.2f)
+        
         buyButton.setOnClickListener {
+
+            it.startAnimation(buttonClick)
 
             val roomType = intent.getIntExtra("roomType", -1)
             postProduct(BuyProduct(1, product.id, roomType))
