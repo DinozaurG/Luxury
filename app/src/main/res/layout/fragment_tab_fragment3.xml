@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".activities.roomtype.TabFragment3">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
         android:background="@color/colorWhite"
         android:elevation="8dp">
 
@@ -20,42 +23,43 @@
             android:id="@+id/textViewTittle3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/luxury_room"
-            android:padding="2dp"
             android:background="@color/colorSecondary"
             android:fontFamily="@font/roboto"
+            android:padding="2dp"
+            android:text="@string/luxury_room"
+            android:textAlignment="center"
             android:textColor="@color/colorWhite"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/text3_area1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image3"
-            app:layout_constraintBottom_toTopOf="@id/text3_area1"/>
+            app:layout_constraintTop_toBottomOf="@id/image3" />
 
         <Button
             android:id="@+id/buttonChooseRoomType3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/bordered_button"
             android:text="@string/choose"
             android:textColor="@color/colorPrimary"
-            android:layout_marginBottom="16dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text3_area3" />
 
         <ImageView
             android:id="@+id/image3"
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/textViewTittle3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/textViewTittle3"
             app:srcCompat="@drawable/luxury_hotel_room"
             tools:src="@tools:sample/backgrounds/scenic" />
 
@@ -82,11 +86,11 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/luxury_area"
             android:gravity="center|start"
+            android:text="@string/luxury_area"
             android:textAllCaps="false"
-            android:textSize="20sp"
             android:textColor="@color/colorSecondary"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/text3_area2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image3_OK1"
@@ -115,10 +119,10 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/luxury_furniture"
             android:gravity="center|start"
-            android:textSize="20sp"
+            android:text="@string/luxury_furniture"
             android:textColor="@color/colorSecondary"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/text3_area3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image3_OK2"
@@ -148,10 +152,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/luxury_info"
             android:gravity="center|start"
-            android:textSize="20sp"
+            android:text="@string/luxury_info"
             android:textColor="@color/colorSecondary"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/buttonChooseRoomType3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image3_OK3"
@@ -159,4 +163,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+</ScrollView>

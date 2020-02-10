@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".activities.roomtype.TabFragment2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/contraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="24dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
         android:background="@color/colorWhite"
         android:elevation="8dp">
 
@@ -23,30 +28,30 @@
             android:background="@color/colorSecondary"
             android:fontFamily="@font/roboto"
             android:padding="2dp"
+            android:text="@string/moderate_room"
             android:textAlignment="center"
             android:textColor="@color/colorWhite"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:text="@string/moderate_room"
+            app:layout_constraintBottom_toTopOf="@id/text2_area1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image2"
-            app:layout_constraintBottom_toTopOf="@id/text2_area1"/>
+            app:layout_constraintTop_toBottomOf="@id/image2" />
 
 
         <Button
             android:id="@+id/buttonChooseRoomType2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/choose"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/bordered_button"
+            android:text="@string/choose"
             android:textColor="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="16dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginEnd="48dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/image2"
@@ -57,7 +62,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/backgrounds/scenic"/>
+            tools:src="@tools:sample/backgrounds/scenic" />
 
 
         <ImageView
@@ -81,11 +86,11 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/standart_area"
             android:gravity="center|start"
+            android:text="@string/standart_area"
             android:textAllCaps="false"
-            android:textSize="20sp"
             android:textColor="@color/colorSecondary"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/text2_area2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image2_OK1"
@@ -112,10 +117,10 @@
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/standart_furniture"
             android:gravity="center|start"
-            android:textSize="20sp"
+            android:text="@string/standart_furniture"
             android:textColor="@color/colorSecondary"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/text2_area3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image2_OK2"
@@ -143,10 +148,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="@string/standart_info"
             android:gravity="center|start"
-            android:textSize="20sp"
+            android:text="@string/standart_info"
             android:textColor="@color/colorSecondary"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@id/buttonChooseRoomType2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/image2_OK3"
@@ -154,4 +159,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</FrameLayout>
+
+</ScrollView>
+

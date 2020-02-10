@@ -20,8 +20,8 @@ class HeaderViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     ) {
         itemView.room_number_name.text = "Номер комнаты: $roomName"
         itemView.room_area.text = "Площадь: $roomArea м2"
-        itemView.room_product_count.text = "Мебели сейчас: $roomProductCount"
-        itemView.room_max_product.text = "Макс. мебели: $roomMaxProducts"
+        itemView.room_product_count.text = "Товар сейчас: $roomProductCount"
+        itemView.room_max_product.text = "Макс. товаров: $roomMaxProducts"
 
         when (roomType) {
             "Super ultra luxary" -> {
